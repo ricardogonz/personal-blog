@@ -1,0 +1,4 @@
+{
+  "src/**/*.{ts, tsx}": "lint",
+  "src/**/*.{ts,tsx,html,css}": "format"
+}
