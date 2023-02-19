@@ -1,4 +1,4 @@
 {
-  "src/**/*.{ts, tsx}": "lint",
-  "src/**/*.{ts,tsx,html,css}": "format"
+  "src/**/*.{js,jsx,ts,tsx,json}": "npm run lint",
+  "src/**/*.{js,jsx,ts,tsx,css,md,json}": "npm run format"
 }

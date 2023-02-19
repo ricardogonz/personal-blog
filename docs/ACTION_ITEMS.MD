@@ -29,15 +29,15 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 ### Project setup
 
 - [x] Set up the project with all the things that I need (eslint, prettier, lint-staged, husky, tailwind).
-- [ ] Set up the router with the pages described above.
+- [x] Set up the router with the pages described above.
 - [ ] Set up the state of the application with context and reducer hooks.
 
 ### UI tasks
 
-- [ ] Create the layout of the page.
-  - [ ] Create the logo component
-  - [ ] Create the navigation bar component.
-    - [ ] Create the search bar.
+- [x] Create the layout of the page.
+  - [x] Create the logo component
+  - [x] Create the navigation bar component.
+    - [x] Create the search bar.
   - [ ] Create the footer component.
   - [ ] Create the content component.
 - [ ] Create the home page.

@@ -2,5 +2,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "css.lint.unknownAtRules": "ignore",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "exportall.config.folderListener": ["/src/components", "/src/components/atoms"]
 }
