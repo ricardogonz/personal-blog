@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Icon, MenuButton, NavButton } from './../atoms';
+import { MenuButton, NavButton } from './../atoms';
+import { BlogName } from '../molecules';
 
 const NAV_OPTIONS = [
   {
@@ -28,27 +29,26 @@ export function Header(): JSX.Element {
   }
 
   return (
-    <nav className='flex items-center justify-between flex-wrap p-4 bg-blue-500'>
-      <Icon />
+    <header className='flex items-center justify-between flex-wrap p-4 bg-blue-500 shadow-md'>
+      <BlogName name='John Doe' />
       <MenuButton onClick={handleMenuClick} />
-
       <div
-        className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto transition-2" ${
+        className={`w-full block flex-grow md:flex md:items-center md:w-auto transition-2" ${
           isMenuOpen ? '' : 'hidden'
         }`}
       >
-        <div className='text-sm lg:flex-grow'>
+        <nav className='text-sm md:flex-grow'>
           {NAV_OPTIONS.map((props, index) => (
             <NavButton isLastButton={NAV_OPTIONS.length - 1 === index} key={index} {...props} />
           ))}
-        </div>
+        </nav>
 
         <input
           type='text'
           placeholder='Search...'
-          className='input mt-4 lg:mt-0 input-bordered input-sm w-full lg:w-64'
+          className='input mt-2 md:mt-0 input-bordered input-sm w-full md:w-64'
         />
       </div>
-    </nav>
+    </header>
   );
 }

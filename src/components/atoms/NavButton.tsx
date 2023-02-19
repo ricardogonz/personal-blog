@@ -11,7 +11,7 @@ const defaultProps = {
 };
 
 export function NavButton({ text, to, isLastButton }: Props): JSX.Element {
-  const className = `block mt-4 lg:mt-0 lg:inline-block text-blue-100 hover:text-white hover:bg-blue-800 p-2 rounded transition ${
+  const className = `block mt-2 lg:mt-0 md:inline-block text-blue-100 hover:text-white hover:bg-blue-800 p-2 rounded transition ${
     isLastButton ? '' : 'mr-4'
   }`;
   return (

@@ -8,7 +8,7 @@ export function MenuButton({ onClick }: Props): JSX.Element {
   }
 
   return (
-    <div className='block lg:hidden'>
+    <div className='block md:hidden'>
       <button
         onClick={handleClick}
         className='flex items-center px-3 py-2 border rounded text-blue-100 border-blue-400 hover:text-white hover:border-white'

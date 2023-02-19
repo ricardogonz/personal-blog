@@ -38,8 +38,9 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
   - [x] Create the logo component
   - [x] Create the navigation bar component.
     - [x] Create the search bar.
-  - [ ] Create the footer component.
-  - [ ] Create the content component.
+  - [x] Create the footer component.
+  - [x] Create the content component.
+- [ ] Create the 404 page.
 - [ ] Create the home page.
   - [ ] Create the hero banner.
   - [ ] Create a section with videos from youtube.
@@ -56,6 +57,7 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 
 ### Functionality tasks
 
+- [ ] Add accessibility to linter rules
 - [ ] Create the models (interfaces and types) for the application data.
 - [ ] Create the actions and actions Types for the posts (reducer).
 - [ ] Implement the logic create a post.

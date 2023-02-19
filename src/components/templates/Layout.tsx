@@ -1,6 +1,6 @@
 import { useLocation, Outlet, Navigate } from 'react-router-dom';
 
-import { Header } from '../organisms/Header';
+import { Header, Footer, Content } from '../organisms';
 
 const LAYOUT_ROUTE = '/';
 
@@ -8,11 +8,14 @@ export function Layout(): JSX.Element {
   const { pathname } = useLocation();
 
   return pathname === LAYOUT_ROUTE ? (
-    <Navigate to='/super-hot' replace />
+    <Navigate to='/home' replace />
   ) : (
-    <div className='layout'>
+    <div className='flex flex-col h-screen justify-between'>
       <Header />
-      <Outlet />
+      <Content>
+        <Outlet />
+      </Content>
+      <Footer />
     </div>
   );
 }
