@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/templates';
-import { Home, About, Blog, Contact } from './components/pages';
+import { Home, About, Blog, Contact, NotFound } from './components/pages';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: '*',
-        element: <h1>Page not found</h1>,
+        element: <NotFound />,
       },
     ],
   },

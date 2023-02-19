@@ -9,7 +9,7 @@ export function SocialMediaNetworkButton({ href, icon }: Props): JSX.Element {
       href={href}
       target='_blank'
       rel='noreferrer'
-      className='p-2 rounded transition  hover:text-white hover:bg-blue-800'
+      className='p-2 rounded-md transition  hover:text-white hover:bg-blue-800'
     >
       {icon}
     </a>
