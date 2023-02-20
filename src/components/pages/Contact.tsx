@@ -1,3 +1,11 @@
+import { SectionTitle } from '../atoms';
+import { ContactForm } from '../molecules';
+
 export function Contact(): JSX.Element {
-  return <div>Contact</div>;
+  return (
+    <>
+      <SectionTitle />
+      <ContactForm />
+    </>
+  );
 }

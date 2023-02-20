@@ -1,3 +1,9 @@
+import { SectionTitle } from '../atoms';
+
 export function About(): JSX.Element {
-  return <div>About</div>;
+  return (
+    <div>
+      <SectionTitle />
+    </div>
+  );
 }

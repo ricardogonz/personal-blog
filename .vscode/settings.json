@@ -8,6 +8,7 @@
     "/src/components/atoms",
     "/src/components/organisms",
     "/src/components/molecules",
-    "/src/components/pages"
+    "/src/components/pages",
+    "/src/models"
   ]
 }
