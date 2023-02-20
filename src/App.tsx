@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/templates';
-import { Home, About, Blog, Contact, NotFound } from './components/pages';
+import { Home, About, Blog, Contact, PostDetails, NotFound } from './components/pages';
+import { AppContextProvider } from './context/app';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
+        path: '/blog/:id',
+        element: <PostDetails />,
+      },
+      {
         path: '/contact',
         element: <Contact />,
       },
@@ -33,7 +38,11 @@ const router = createBrowserRouter([
 ]);
 
 function App(): JSX.Element {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <AppContextProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AppContextProvider>
+  );
 }
 
 export default App;

@@ -30,7 +30,7 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 
 - [x] Set up the project with all the things that I need (eslint, prettier, lint-staged, husky, tailwind).
 - [x] Set up the router with the pages described above.
-- [ ] Set up the state of the application with context and reducer hooks.
+- [x] Set up the state of the application with context and reducer hooks.
 
 ### UI tasks
 
@@ -48,7 +48,7 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 - [ ] Create an about page with fake data.
 - [x] Create a contact page with a simple form (only visual).
 - [ ] Create the blog
-  - [ ] Create the card for the posts should contain: the title, abstract of the content, creation date, update date, image, and delete button.
+  - [ ] Create the card for the posts should contain: the title, abstract of the content, creation date, image,and delete button.
   - [ ] Create the form to create a post (will be rendered in the list of posts with a button).
 - [ ] Details of a post
   - [ ] Create the details page of a post.
@@ -57,8 +57,7 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 ### Functionality tasks
 
 - [ ] Add accessibility to linter rules
-- [ ] Create the models (interfaces and types) for the application data.
-- [ ] Create the actions and actions Types for the posts (reducer).
+- [x] Create the models (interfaces and types) for the application data.
 - [ ] Implement the logic create a post.
 - [ ] Implement the logic to delete a post.
 - [ ] Implement the logic to update a post.
