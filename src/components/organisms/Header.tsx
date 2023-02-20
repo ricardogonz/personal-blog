@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { MenuButton, NavButton } from './../atoms';
 import { BlogName } from '../molecules';
 
-const NAV_OPTIONS = [
+type NavButtonProps = React.ComponentProps<typeof NavButton>;
+
+const NAV_OPTIONS: NavButtonProps[] = [
   {
     text: 'Home',
     to: 'home',

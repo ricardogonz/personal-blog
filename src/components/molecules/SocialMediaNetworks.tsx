@@ -1,7 +1,9 @@
 import { SocialMediaNetworkButton } from '../atoms';
 import { BsFacebook, BsYoutube, BsLinkedin, BsInstagram } from 'react-icons/bs';
 
-const SOCIAL_NETWORKS = [
+type SocialMediaNetworkButtonProps = React.ComponentProps<typeof SocialMediaNetworkButton>;
+
+const SOCIAL_NETWORKS: SocialMediaNetworkButtonProps[] = [
   {
     href: 'https://www.facebook.com',
     icon: <BsFacebook />,
@@ -20,9 +22,13 @@ const SOCIAL_NETWORKS = [
   },
 ];
 
-export function SocialMediaNetworks(): JSX.Element {
+interface Props {
+  className?: string;
+}
+
+export function SocialMediaNetworks({ className = '' }: Props): JSX.Element {
   return (
-    <section className='flex gap-4'>
+    <section className={`flex gap-4 ${className}`}>
       {SOCIAL_NETWORKS.map((socialNetwork, index) => (
         <SocialMediaNetworkButton key={index} {...socialNetwork} />
       ))}
