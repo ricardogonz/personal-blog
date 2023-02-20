@@ -3,5 +3,5 @@ interface Props {
 }
 
 export function Content({ children }: Props): JSX.Element {
-  return <article className='flex-grow p-1'>{children}</article>;
+  return <article className='flex-grow p-4'>{children}</article>;
 }

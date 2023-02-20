@@ -8,7 +8,7 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 - No authentication is required.
 - I will follow atomic design principles for components creation
 - I can use static media files.
-- Hero banner.
+- Hero image.
 - CRUD operations for the blog posts.
 - Search capabilities with auto-completion.
 - No WYSIWYG required.
@@ -42,7 +42,7 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
   - [x] Create the content component.
 - [ ] Create the 404 page.
 - [ ] Create the home page.
-  - [ ] Create the hero banner.
+  - [x] Create the hero image.
   - [ ] Create a section with videos from youtube.
   - [ ] Create a section for the latest post.
 - [ ] Create an about page with fake data.
