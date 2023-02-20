@@ -45,11 +45,11 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
   - [x] Create the hero image.
   - [ ] Create a section with videos from youtube.
   - [ ] Create a section for the latest post.
-- [ ] Create an about page with fake data.
+- [x] Create an about page with fake data.
 - [x] Create a contact page with a simple form (only visual).
-- [ ] Create the blog
-  - [ ] Create the card for the posts should contain: the title, abstract of the content, creation date, image,and delete button.
-  - [ ] Create the form to create a post (will be rendered in the list of posts with a button).
+- [x] Create the blog
+  - [x] Create the card for the posts should contain: the title, abstract of the content, creation date, image,and delete button.
+  - [x] Create the form to create a post (will be rendered in the list of posts with a button).
 - [ ] Details of a post
   - [ ] Create the details page of a post.
   - [ ] Create the form to update the post.

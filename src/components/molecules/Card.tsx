@@ -5,10 +5,14 @@ interface Props {
   image: string;
   title: string;
   content: string;
-  creationDate: string;
+  updateDate: string;
 }
 
-export function Card({ image, content, title, creationDate, id }: Props): JSX.Element {
+export function Card({ image, content, title, updateDate, id }: Props): JSX.Element {
+  function handleDelete(): void {
+    console.log('Delete card with the id: ', id);
+  }
+
   return (
     <div className='card sm:card-side bg-base-100 xl:w-[48%] shadow-xl'>
       <div
@@ -18,11 +22,14 @@ export function Card({ image, content, title, creationDate, id }: Props): JSX.El
       ></div>
       <div className='card-body'>
         <div className='text-right'>
-          <span className='text-sm text-gray-400'>{creationDate}</span>
+          <span className='text-sm text-gray-400'>{new Date(updateDate).toDateString()}</span>
         </div>
         <h2 className='card-title'>{title}</h2>
         <p>{content}</p>
         <div className='card-actions justify-end'>
+          <button onClick={handleDelete} type='button' className='btn btn-secondary'>
+            Delete
+          </button>
           <NavLink to={id} className='btn btn-primary'>
             Read more
           </NavLink>
