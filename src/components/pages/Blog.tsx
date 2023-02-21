@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { SectionTitle } from '../atoms';
 import { Card, CircleButton, AddPostForm } from '../molecules';
 import { useAppContext } from '../../context/app';
+import type { PostFormValues } from '../../models';
 
 export function Blog(): JSX.Element {
   const [isAddPostFormOpen, setIsAddPostFormOpen] = useState(false);
@@ -16,6 +17,11 @@ export function Blog(): JSX.Element {
     setIsAddPostFormOpen(false);
   }
 
+  function handleSubmit({ title, content }: PostFormValues): void {
+    console.log('Form submitted');
+    console.log({ title }, { content });
+  }
+
   return (
     <>
       <div className='relative'>
@@ -26,7 +32,7 @@ export function Blog(): JSX.Element {
       </div>
 
       <div className={`transition ${isAddPostFormOpen ? '' : 'hidden'}`}>
-        <AddPostForm onCancel={handleCancel} />
+        <AddPostForm onCancel={handleCancel} onSubmit={handleSubmit} />
       </div>
 
       {posts?.length !== 0 ? (

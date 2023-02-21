@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BsChevronLeft } from 'react-icons/bs';
+import { FiEdit2 } from 'react-icons/fi';
 
 import { SectionTitle } from '../atoms';
 import { useAppContext } from '../../context/app';
-import { CircleButton } from '../molecules';
+import { CircleButton, AddPostForm } from '../molecules';
 
-export function PostDetails(): JSX.Element | undefined {
+export function PostDetails(): JSX.Element {
+  const [isEditPostFormOpen, setIsEditPostFormOpen] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
   const { posts } = useAppContext();
@@ -22,6 +24,18 @@ export function PostDetails(): JSX.Element | undefined {
     navigate('/blog');
   }
 
+  function handleEditPost(): void {
+    setIsEditPostFormOpen(true);
+  }
+
+  function handleCancel(): void {
+    setIsEditPostFormOpen(false);
+  }
+
+  function handleSubmit({ title, content }: { title: string; content: string }): void {
+    console.log(title, content);
+  }
+
   return (
     <>
       <div className='relative'>
@@ -34,26 +48,42 @@ export function PostDetails(): JSX.Element | undefined {
             <BsChevronLeft className='text-2xl' />
           </CircleButton>
         </div>
-      </div>
-
-      <div className='flex flex-col md:flex-row items-top'>
-        <div className='text-center md:w-1/3 mb-4 md:mb-0 p-4'>
-          <img
-            src={post?.image}
-            alt='post image'
-            className='inline-block rounded-2xl shadow-xl max-h-[500px]'
-          />
-        </div>
-
-        <div className='text-lg md:w-2/3'>
-          <pre className='whitespace-pre-wrap font-sans'>{post?.content}</pre>
-          {post?.updateDate !== undefined && (
-            <p className='text-right text-sm text-gray-400'>
-              {new Date(post?.updateDate).toDateString()}
-            </p>
-          )}
+        <div
+          className='absolute top-0 right-0
+        '
+        >
+          <CircleButton onClick={handleEditPost} tip='Edit post' disabled={isEditPostFormOpen}>
+            <FiEdit2 className='text-2xl' />
+          </CircleButton>
         </div>
       </div>
+
+      {isEditPostFormOpen && post?.title !== undefined && post?.content !== undefined ? (
+        <AddPostForm
+          formValues={{ title: post.title, content: post.content }}
+          onCancel={handleCancel}
+          onSubmit={handleSubmit}
+        />
+      ) : (
+        <div className='flex flex-col md:flex-row items-top'>
+          <div className='text-center md:w-1/3 mb-4 md:mb-0 p-4'>
+            <img
+              src={post?.image}
+              alt='post image'
+              className='inline-block rounded-2xl shadow-xl max-h-[500px]'
+            />
+          </div>
+
+          <div className='text-lg md:w-2/3'>
+            <pre className='whitespace-pre-wrap font-sans'>{post?.content}</pre>
+            {post?.updateDate !== undefined && (
+              <p className='text-right text-sm text-gray-400'>
+                {new Date(post?.updateDate).toDateString()}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }

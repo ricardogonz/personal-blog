@@ -1,5 +1,7 @@
+import { useState } from 'react';
+
 import { InputField, TextareaField } from '../atoms';
-import type { InputType } from '../../models';
+import type { InputType, PostFormValues } from '../../models';
 
 type InputFieldProps = React.ComponentProps<typeof InputField>;
 
@@ -14,13 +16,26 @@ const INPUT_FIELDS: InputFieldProps[] = [
 ];
 
 interface Props {
-  onCancel: () => void;
+  formValues?: PostFormValues;
+  onCancel?: () => void;
+  onSubmit?: (values: PostFormValues) => void;
 }
 
-export function AddPostForm({ onCancel }: Props): JSX.Element {
+export function AddPostForm({
+  onCancel = () => {},
+  onSubmit = () => {},
+  formValues: initialFormValues = { title: '', content: '' },
+}: Props): JSX.Element {
+  const [formValues, setFormValues] = useState<PostFormValues>(initialFormValues);
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
+    const { name, value } = event.target;
+    setFormValues((prevState) => ({ ...prevState, [name]: value }));
+  }
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    console.log('Form submitted');
+    onSubmit({ ...formValues });
   }
 
   return (
@@ -29,10 +44,24 @@ export function AddPostForm({ onCancel }: Props): JSX.Element {
       className='flex flex-col md:flex-row flex-wrap justify-between gap-y-3 mb-4'
     >
       {INPUT_FIELDS.map((props, index) => (
-        <InputField key={index} {...props} />
+        <InputField
+          key={index}
+          {...props}
+          value={formValues.title}
+          name='title'
+          onChange={handleChange}
+          required
+        />
       ))}
 
-      <TextareaField placeholder='Type the post content here' label='Content' />
+      <TextareaField
+        placeholder='Type the post content here'
+        label='Content'
+        value={formValues.content}
+        onChange={handleChange}
+        name='content'
+        required
+      />
 
       <div className='flex flex-row w-full justify-end gap-2'>
         <button type='button' onClick={onCancel} className='btn btn-secondary'>

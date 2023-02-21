@@ -50,9 +50,9 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 - [x] Create the blog
   - [x] Create the card for the posts should contain: the title, abstract of the content, creation date, image,and delete button.
   - [x] Create the form to create a post (will be rendered in the list of posts with a button).
-- [ ] Details of a post
-  - [ ] Create the details page of a post.
-  - [ ] Create the form to update the post.
+- [x] Details of a post
+  - [x] Create the details page of a post.
+  - [x] Create the form to update the post.
 
 ### Functionality tasks
 
