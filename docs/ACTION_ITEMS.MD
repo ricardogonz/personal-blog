@@ -41,10 +41,10 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
   - [x] Create the footer component.
   - [x] Create the content component.
 - [x] Create the 404 page.
-- [ ] Create the home page.
+- [x] Create the home page.
   - [x] Create the hero image.
-  - [ ] Create a section with videos from youtube.
-  - [ ] Create a section for the latest post.
+  - [x] Create a section with videos from youtube.
+  - [x] Create a section for the latest post.
 - [x] Create an about page with fake data.
 - [x] Create a contact page with a simple form (only visual).
 - [x] Create the blog
@@ -61,4 +61,4 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 - [x] Implement the logic to delete a post.
 - [x] Implement the logic to update a post.
 - [x] Implement the search functionality with the autocomplete feature.
-- [ ] Setup the local storage and populate the state of the application.
+- [x] Setup the local storage and populate the state of the application.

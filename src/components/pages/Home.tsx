@@ -4,9 +4,8 @@ import { Youtube } from '../atoms';
 
 export function Home(): JSX.Element {
   const { posts } = useAppContext();
-
+  const isLoadingPosts = posts === undefined;
   const isEmptyPosts = posts?.length === 0;
-
   const latestPosts = posts?.slice(0, 2);
 
   return (
@@ -27,7 +26,9 @@ export function Home(): JSX.Element {
         <Youtube className='sm:basis-1/3' src='https://www.youtube.com/embed/dQw4w9WgXcQ' />
         <div className='sm:basis-2/3 p-4'>
           <h2 className='text-2xl font-bold mb-4'>Latest Posts:</h2>
-          {isEmptyPosts ? (
+          {isLoadingPosts ? (
+            <progress className='w-full progress'></progress>
+          ) : isEmptyPosts ? (
             <EmptyPostsFeed />
           ) : (
             <div className='flex flex-col xl:flex-row xl:justify-between gap-4'>

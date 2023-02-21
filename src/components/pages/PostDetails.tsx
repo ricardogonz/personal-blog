@@ -84,11 +84,13 @@ export function PostDetails(): JSX.Element {
       ) : (
         <div className='flex flex-col md:flex-row items-top'>
           <div className='text-center md:w-1/3 mb-4 md:mb-0 p-4'>
-            <img
-              src={post?.image}
-              alt='post image'
-              className='inline-block rounded-2xl shadow-xl max-h-[500px]'
-            />
+            {post?.image !== undefined && (
+              <img
+                src={post?.image}
+                alt='post image'
+                className='inline-block rounded-2xl shadow-xl max-h-[500px]'
+              />
+            )}
           </div>
 
           <div className='text-lg md:w-2/3'>

@@ -13,13 +13,13 @@ function randomIntFromInterval(min, max) {
 const baseDate = faker.date.past().toISOString();
 
 console.log('🔥 Generating data.json');
-const json = fs.readdirSync(path.join(PATH)).map((file, index) => {
+const json = fs.readdirSync(path.join(PATH)).map((file, index, arr) => {
   const date = new Date(baseDate);
-  date.setDate(date.getDate() + index).toLocaleString();
+  date.setDate(date.getDate() + arr.length - index).toLocaleString();
 
   return {
     id: (index + 1).toString(),
-    image: path.join('images', 'posts', file),
+    image: path.join('/', 'images', 'posts', file),
     content: faker.lorem.paragraphs(randomIntFromInterval(1, 3), '\n'),
     title: faker.lorem.sentence(),
     creationDate: date.toISOString(),

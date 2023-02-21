@@ -8,6 +8,7 @@ import type { PostFormValues } from '../../models';
 export function Blog(): JSX.Element {
   const [isAddPostFormOpen, setIsAddPostFormOpen] = useState(false);
   const { setPosts, posts } = useAppContext();
+  const isLoadingPosts = posts === undefined;
 
   function handleAddPost(): void {
     setIsAddPostFormOpen(true);
@@ -46,7 +47,9 @@ export function Blog(): JSX.Element {
         <AddPostForm onCancel={handleCancel} onSubmit={handleSubmit} />
       </div>
 
-      {posts?.length !== 0 ? (
+      {isLoadingPosts ? (
+        <progress className='w-full progress'></progress>
+      ) : posts?.length !== 0 ? (
         <div className='flex flex-col gap-4 xl:flex-row xl:flex-wrap xl:justify-between'>
           {posts?.map(({ creationDate, ...postData }) => (
             <Card showDelete key={postData.id} {...postData} />

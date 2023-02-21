@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 
 import AppContext, { type AppContextType } from './appContext';
-import data from '../../../src/data.json';
 import type { Post } from '../../models';
 
 interface Props {
@@ -9,11 +8,33 @@ interface Props {
 }
 
 export function AppContextProvider({ children }: Props): JSX.Element {
-  const [posts, setPosts] = useState<Post[]>(data);
+  useEffect(() => {
+    async function getData(): Promise<void> {
+      try {
+        const module = await require('../../' + 'data.json');
+        localStorage.setItem('posts', JSON.stringify(module));
+        setPosts(module);
+      } catch (error) {
+        setPosts([]);
+      }
+    }
+
+    const lsPosts = localStorage.getItem('posts');
+    if (lsPosts === null) {
+      void getData();
+    } else {
+      setPosts(JSON.parse(lsPosts));
+    }
+  }, []);
+
+  const [posts, setPosts] = useState<Post[]>();
 
   const value = {
     posts,
-    setPosts,
+    setPosts: (posts: Post[]) => {
+      setPosts(posts);
+      localStorage.setItem('posts', JSON.stringify(posts));
+    },
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

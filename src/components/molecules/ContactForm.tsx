@@ -6,36 +6,36 @@ type InputFieldProps = React.ComponentProps<typeof InputField>;
 const INPUT_FIELDS: InputFieldProps[] = [
   {
     type: 'text' as InputType,
-    placeholder: 'First name',
-    label: 'What is your first name?',
+    placeholder: 'First name...',
+    label: 'First name',
     className: 'md:w-[49%]',
     required: true,
   },
   {
     type: 'text' as InputType,
-    placeholder: 'Last name',
-    label: 'What is your last name?',
+    placeholder: 'Last name...',
+    label: 'Last name',
     className: 'md:w-[49%]',
     required: true,
   },
   {
     type: 'email' as InputType,
-    placeholder: 'email@email.com',
-    label: 'What is your email?',
+    placeholder: 'Email address...',
+    label: 'Email',
     className: 'md:w-[49%]',
     required: true,
   },
   {
     type: 'text' as InputType,
-    placeholder: 'Company name',
-    label: 'What is your company?',
+    placeholder: 'Company...',
+    label: 'Company',
     className: 'md:w-[49%]',
     required: true,
   },
   {
     type: 'text' as InputType,
-    placeholder: 'Subject',
-    label: 'What is the subject?',
+    placeholder: 'Subject...',
+    label: 'Subject',
     required: true,
   },
 ];
@@ -55,7 +55,7 @@ export function ContactForm(): JSX.Element {
         <InputField key={index} {...props} />
       ))}
 
-      <TextareaField placeholder='Type your message' label='Your message' />
+      <TextareaField placeholder='Message...' label='Message' />
 
       <div className='w-full text-right'>
         <button className='btn btn-primary'>Send</button>

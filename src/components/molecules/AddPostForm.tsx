@@ -8,7 +8,7 @@ type InputFieldProps = React.ComponentProps<typeof InputField>;
 const INPUT_FIELDS: InputFieldProps[] = [
   {
     type: 'text' as InputType,
-    placeholder: 'Type here the post title',
+    placeholder: 'Title...',
     label: 'Title',
     className: 'md:w-f',
     required: true,
@@ -58,7 +58,7 @@ export function AddPostForm({
       ))}
 
       <TextareaField
-        placeholder='Type the post content here'
+        placeholder='Content...'
         label='Content'
         value={formValues.content}
         onChange={handleChange}

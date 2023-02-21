@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/templates';
@@ -40,11 +43,13 @@ const router = createBrowserRouter([
 
 function App(): JSX.Element {
   return (
-    <AppContextProvider>
-      <HelmetProvider>
-        <RouterProvider router={router}></RouterProvider>
-      </HelmetProvider>
-    </AppContextProvider>
+    <Suspense fallback={<span>loading...</span>}>
+      <AppContextProvider>
+        <HelmetProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </HelmetProvider>
+      </AppContextProvider>
+    </Suspense>
   );
 }
 
