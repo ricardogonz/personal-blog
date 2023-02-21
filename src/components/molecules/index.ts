@@ -6,4 +6,5 @@ export * from './CircleButton';
 export * from './ContactForm';
 export * from './HeroImage';
 export * from './Modal';
+export * from './Search';
 export * from './SocialMediaNetworks';

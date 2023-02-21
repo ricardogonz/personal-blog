@@ -21,7 +21,7 @@ export function PostDetails(): JSX.Element {
   }, [post]);
 
   function handleBackClick(): void {
-    navigate('/blog');
+    navigate(-1);
   }
 
   function handleEditPost(): void {

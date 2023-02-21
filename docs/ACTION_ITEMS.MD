@@ -61,5 +61,5 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 - [ ] Implement the logic create a post.
 - [ ] Implement the logic to delete a post.
 - [ ] Implement the logic to update a post.
-- [ ] Implement the search functionality with the autocomplete feature.
+- [x] Implement the search functionality with the autocomplete feature.
 - [ ] Setup the local storage and populate the state of the application.
