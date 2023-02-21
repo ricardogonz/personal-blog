@@ -58,8 +58,8 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 
 - [ ] Add accessibility to linter rules
 - [x] Create the models (interfaces and types) for the application data.
-- [ ] Implement the logic create a post.
-- [ ] Implement the logic to delete a post.
-- [ ] Implement the logic to update a post.
+- [x] Implement the logic create a post.
+- [x] Implement the logic to delete a post.
+- [x] Implement the logic to update a post.
 - [x] Implement the search functionality with the autocomplete feature.
 - [ ] Setup the local storage and populate the state of the application.

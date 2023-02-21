@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import { useAppContext } from '../../context/app';
+import type { Post } from '../../models';
 import { Modal } from '../molecules';
 
 interface Props {
@@ -11,8 +13,11 @@ interface Props {
 }
 
 export function Card({ image, content, title, updateDate, id }: Props): JSX.Element {
+  const { setPosts, posts } = useAppContext();
+
   function handleDelete(): void {
-    console.log('Delete card with the id: ', id);
+    const updatedPosts = posts?.filter((post) => post.id !== id) as Post[];
+    setPosts?.(updatedPosts);
   }
 
   function truncText(text: string, max: number): string {
@@ -36,7 +41,7 @@ export function Card({ image, content, title, updateDate, id }: Props): JSX.Elem
         </>
       </Modal>
 
-      <div className='card h-[300px] sm:card-side bg-base-100 xl:w-[48%] shadow-xl'>
+      <div className='card h-[350px] sm:h-[300px] sm:card-side bg-base-100 xl:w-[48%] shadow-xl'>
         <div
           className='hidden md:block md:w-[100px] lg:w-[200px] bg-cover rounded-l-2xl text-center overflow-hidden'
           style={{ backgroundImage: `url(${image})` }}

@@ -10,12 +10,16 @@ export function Layout(): JSX.Element {
   return pathname === LAYOUT_ROUTE ? (
     <Navigate to='/home' replace />
   ) : (
-    <div className='flex flex-col h-screen justify-between'>
-      <Header />
-      <Content>
-        <Outlet />
-      </Content>
-      <Footer />
+    <div className='relative'>
+      <div className='fixed w-full z-50 top-0'>
+        <Header />
+      </div>
+      <div className='flex flex-col h-screen justify-between pt-[80px]'>
+        <Content>
+          <Outlet />
+        </Content>
+        <Footer />
+      </div>
     </div>
   );
 }

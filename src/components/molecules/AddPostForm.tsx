@@ -15,6 +15,8 @@ const INPUT_FIELDS: InputFieldProps[] = [
   },
 ];
 
+const INITIAL_FORM_VALUES: PostFormValues = { title: '', content: '' };
+
 interface Props {
   formValues?: PostFormValues;
   onCancel?: () => void;
@@ -24,7 +26,7 @@ interface Props {
 export function AddPostForm({
   onCancel = () => {},
   onSubmit = () => {},
-  formValues: initialFormValues = { title: '', content: '' },
+  formValues: initialFormValues = INITIAL_FORM_VALUES,
 }: Props): JSX.Element {
   const [formValues, setFormValues] = useState<PostFormValues>(initialFormValues);
 
@@ -36,6 +38,7 @@ export function AddPostForm({
   function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     onSubmit({ ...formValues });
+    setFormValues(INITIAL_FORM_VALUES);
   }
 
   return (

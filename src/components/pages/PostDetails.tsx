@@ -11,7 +11,7 @@ export function PostDetails(): JSX.Element {
   const [isEditPostFormOpen, setIsEditPostFormOpen] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
-  const { posts } = useAppContext();
+  const { posts, setPosts } = useAppContext();
   const post = posts?.find((post) => post.id === id);
 
   useEffect(() => {
@@ -33,7 +33,24 @@ export function PostDetails(): JSX.Element {
   }
 
   function handleSubmit({ title, content }: { title: string; content: string }): void {
-    console.log(title, content);
+    const postIndex = posts?.findIndex((post) => post.id === id) as number;
+
+    if (postIndex === -1) {
+      return;
+    }
+
+    const updatedPosts = [...(posts ?? [])];
+    let postToUpdate = updatedPosts.splice(postIndex, 1)[0];
+    postToUpdate = {
+      ...postToUpdate,
+      title,
+      content,
+      updateDate: new Date().toISOString(),
+    };
+    updatedPosts.unshift(postToUpdate);
+    setPosts?.(updatedPosts);
+
+    setIsEditPostFormOpen(false);
   }
 
   return (

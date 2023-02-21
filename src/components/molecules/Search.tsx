@@ -44,6 +44,7 @@ export function Search(): JSX.Element {
           className='input input-bordered w-full'
           onChange={handleChange}
           value={searchTerm}
+          disabled={posts?.length === 0}
         />
         <button className='btn btn-square pointer-events-none'>
           <svg
