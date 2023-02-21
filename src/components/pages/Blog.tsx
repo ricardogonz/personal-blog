@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { TbMoodEmpty } from 'react-icons/tb';
 
 import { SectionTitle } from '../atoms';
-import { Card, CircleButton, AddPostForm } from '../molecules';
+import { Card, CircleButton, AddPostForm, EmptyPostsFeed } from '../molecules';
 import { useAppContext } from '../../context/app';
 import type { PostFormValues } from '../../models';
 
@@ -20,7 +19,6 @@ export function Blog(): JSX.Element {
 
   function handleSubmit({ title, content }: PostFormValues): void {
     setPosts?.([
-      ...(posts ?? []),
       {
         id: posts !== undefined ? `${posts?.length + 1}` : '1',
         title,
@@ -29,6 +27,7 @@ export function Blog(): JSX.Element {
         creationDate: new Date().toISOString(),
         updateDate: new Date().toISOString(),
       },
+      ...(posts ?? []),
     ]);
 
     setIsAddPostFormOpen(false);
@@ -50,19 +49,11 @@ export function Blog(): JSX.Element {
       {posts?.length !== 0 ? (
         <div className='flex flex-col gap-4 xl:flex-row xl:flex-wrap xl:justify-between'>
           {posts?.map(({ creationDate, ...postData }) => (
-            <Card key={postData.id} {...postData} />
+            <Card showDelete key={postData.id} {...postData} />
           ))}
         </div>
       ) : (
-        <div className='hero h-1/2'>
-          <div className='hero-content flex-col lg:flex-row items-center'>
-            <TbMoodEmpty className='text-9xl' />
-            <div>
-              <h1 className='text-3xl font-bold'>You don&apos;t have any post</h1>
-              <p className='text-2xl py-6'>Please add a post</p>
-            </div>
-          </div>
-        </div>
+        <EmptyPostsFeed />
       )}
     </>
   );

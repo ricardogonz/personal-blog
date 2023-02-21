@@ -6,3 +6,4 @@ export * from './NavButton';
 export * from './SectionTitle';
 export * from './SocialMediaNetworkButton';
 export * from './TextareaField';
+export * from './Youtube';

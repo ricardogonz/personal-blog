@@ -4,6 +4,7 @@ export * from './BlogName';
 export * from './Card';
 export * from './CircleButton';
 export * from './ContactForm';
+export * from './EmptyPostsFeed';
 export * from './HeroImage';
 export * from './Modal';
 export * from './Search';
