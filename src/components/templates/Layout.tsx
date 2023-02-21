@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useLocation, Outlet, Navigate } from 'react-router-dom';
 
 import { Header, Footer, Content } from '../organisms';
@@ -11,6 +12,9 @@ export function Layout(): JSX.Element {
     <Navigate to='/home' replace />
   ) : (
     <div className='relative'>
+      <Helmet>
+        <title>{`John Doe | ${pathname.split('/')[1].toUpperCase()}`}</title>
+      </Helmet>
       <div className='fixed w-full z-50 top-0'>
         <Header />
       </div>

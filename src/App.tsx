@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/templates';
 import { Home, About, Blog, Contact, NotFound, PostDetails } from './components/pages';
@@ -40,7 +41,9 @@ const router = createBrowserRouter([
 function App(): JSX.Element {
   return (
     <AppContextProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <HelmetProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </HelmetProvider>
     </AppContextProvider>
   );
 }

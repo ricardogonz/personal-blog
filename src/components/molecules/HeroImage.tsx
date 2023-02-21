@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 interface Props {
   title: string;
   content: string;
@@ -12,7 +14,9 @@ export function HeroImage({ title, content, image }: Props): JSX.Element {
         <div className='max-w-md'>
           <h1 className='mb-5 text-5xl font-bold'>{title}</h1>
           <p className='mb-5'>{content}</p>
-          <button className='btn btn-primary'>Get Started</button>
+          <NavLink className='btn btn-primary' to={'/contact'}>
+            Get Started
+          </NavLink>
         </div>
       </div>
     </div>
