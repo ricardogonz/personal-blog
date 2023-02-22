@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Personal Blog
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -8,8 +8,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the setup script to put mocked data in the app and runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
@@ -38,6 +37,18 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+### `npm run lint`
+
+This script will run the linter against the src folder.
+
+### `npm run lint:fix`
+
+Same as the lint script but with the fix flag turn on
+
+### `npm run setup`
+
+This script will create a data.json inside the src folder which will contain mocked posts to fill the latest posts section on the home page and the blog page, also if there is no posts key in the local storage, the data will be bulked into the local storage to bootstrap the app with posts data.
 
 ## Learn More
 

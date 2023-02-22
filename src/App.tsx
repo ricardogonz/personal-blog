@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import { Layout } from './components/templates';
-import { Home, About, Blog, Contact, NotFound, PostDetails } from './components/pages';
 import { AppContextProvider } from './context/app';
+import { Home, About, Blog, Contact, NotFound, PostDetails } from './components/pages';
 
 const router = createBrowserRouter([
   {

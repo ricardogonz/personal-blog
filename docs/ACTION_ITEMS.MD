@@ -6,14 +6,13 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 
 - This is a SPA therefore we need a router to set up the blog pages.
 - No authentication is required.
-- I will follow atomic design principles for components creation
+- I will follow atomic design principles for components creation.
 - I can use static media files.
 - Hero image.
 - CRUD operations for the blog posts.
 - Search capabilities with auto-completion.
 - No WYSIWYG required.
 - Local storage.
-- Not mentioned but I will add unit testing.
 - I won't include pagination, filters, or infinite scroll for the posts.
 
 ## Sections or pages for the blog
@@ -57,8 +56,8 @@ Create a micro-CMS system for a personal use blog using React JS and local stora
 ### Functionality tasks
 
 - [x] Create the models (interfaces and types) for the application data.
-- [x] Implement the logic create a post.
+- [x] Implement the logic to create a post.
 - [x] Implement the logic to delete a post.
 - [x] Implement the logic to update a post.
 - [x] Implement the search functionality with the autocomplete feature.
-- [x] Setup the local storage and populate the state of the application.
+- [x] Set up the local storage and populate the state of the application.
